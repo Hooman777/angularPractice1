@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 
 // // Serve only the static files form the dist directory
-// app.use(express.static("./dist/dotnet-intermediate-workshop"));
+app.use(express.static("./dist/practice1"));
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 80);
