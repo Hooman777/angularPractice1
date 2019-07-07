@@ -1,0 +1,49 @@
+<input
+  type="text"
+  class="input input-primary m-4 "
+  [(ngModel)]="this.group.first"
+  placeholder="First"
+/>
+<input
+  type="text"
+  class="input input-primary m-4 "
+  [(ngModel)]="this.group.second"
+  placeholder="Second"
+/>
+<input
+  type="text"
+  class="input input-primary m-4 "
+  [(ngModel)]="this.group.third"
+  placeholder="Third"
+/>
+<button
+  type="button"
+  class="btn btn-success"
+  (click)="onInputData()"
+  [disabled]="
+    this.group.first === '' ||
+    this.group.second === '' ||
+    this.group.third === ''
+  "
+>
+  Input Data
+</button>
+
+<table class="table table-hover">
+  <thead class="badge-danger">
+    <tr>
+      <th class="col-2">ID</th>
+      <th class="col-3">First</th>
+      <th class="col-3">Second</th>
+      <th class="col-3">Third</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let member of members">
+      <th>{{ member.id }}</th>
+      <td>{{ member.first }}</td>
+      <td>{{ member.second }}</td>
+      <td>{{ member.third }}</td>
+    </tr>
+  </tbody>
+</table>
